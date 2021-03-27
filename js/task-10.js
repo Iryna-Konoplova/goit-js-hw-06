@@ -99,9 +99,13 @@ const users = [
 
 
 const getSortedUniqueSkills = users => {
-  // твой код
+  return users
+  .flatMap(user => user.skills)
+  .filter(
+  (skills, index, array) => array.indexOf(skills) === index)
+  .sort()
 };
 
 console.log(getSortedUniqueSkills(users));
  [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 
-   'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
+  'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam']
